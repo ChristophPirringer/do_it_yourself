@@ -19,12 +19,17 @@ describe(MyHash) do
   end
 
   describe("#has_key?") do
-    it("returns 'true' if the key exists in the hash") do
+    it("returns 'true' for a key that exists in the hash") do
       test_hash = MyHash.new()
       test_hash.myStore("kitten", "cute")
       expect(test_hash.has_key?("kitten")).to(eq(true))
     end
 
+    it("returns 'false' for a key that does not exist in the hash") do
+      test_hash = MyHash.new()
+      test_hash.myStore("kitten", "cute")
+      expect(test_hash.has_key?("dog")).to(eq(false))
+    end
   end
 
 
