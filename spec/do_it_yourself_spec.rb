@@ -32,5 +32,14 @@ describe(MyHash) do
     end
   end
 
+  describe("#has_value?") do
+    it("returns 'true' for a value that exists in the hash") do
+      test_hash = MyHash.new()
+      test_hash.myStore("kitten", "cute")
+      expect(test_hash.has_value?("cute")).to(eq(true))
+    end
+
+  end
+
 
 end

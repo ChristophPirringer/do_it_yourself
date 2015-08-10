@@ -20,15 +20,26 @@ class MyHash
   end
 
   define_method(:has_key?) do |key|
-    value=nil
+    result=nil
     @hash.each() do |pair|
       if pair[0] == key
-        value=true
+        result=true
       else
-        value=false
+        result=false
       end
     end
-    value
+    result
   end
 
+  define_method(:has_value?) do |value|
+    result=nil
+    @hash.each() do |pair|
+      if pair[1] == value
+        result=true
+      else
+        result=false
+      end
+    end
+    result
+  end
 end
