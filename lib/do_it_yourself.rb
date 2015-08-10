@@ -5,6 +5,10 @@ class MyHash
     @hash=[]
   end
 
+  define_method(:value) do
+    @hash[0]
+  end
+
   define_method(:myStore) do |key, value|
     @hash.push([key, value])
   end
@@ -45,5 +49,9 @@ class MyHash
 
   define_method(:what_length) do
     result=@hash.length()
+  end
+
+  define_method(:myMerge) do |hash_two|
+    result=@hash.push(hash_two)
   end
 end

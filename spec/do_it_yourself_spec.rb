@@ -50,5 +50,14 @@ describe(MyHash) do
     end
   end
 
+  describe("#myMerge") do
+    it("creates a new object with both the entries of the object and those of the argument cued after it") do
+      test_hash = MyHash.new()
+      test_hash.myStore("kitten", "cute")
+      test_hash_two = MyHash.new()
+      test_hash_two.myStore("dog", "cuter")
+      expect(test_hash.myMerge(test_hash_two.value)).to(eq([ ["kitten","cute"],["dog", "cuter"] ]))
+    end
+  end
 
 end
