@@ -19,4 +19,16 @@ class MyHash
     value
   end
 
+  define_method(:has_key?) do |key|
+    value=nil
+    @hash.each() do |pair|
+      if pair[0] == key
+        value=true
+      else
+        value=false
+      end
+    end
+    value
+  end
+
 end
