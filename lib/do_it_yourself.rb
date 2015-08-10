@@ -42,4 +42,8 @@ class MyHash
     end
     result
   end
+
+  define_method(:what_length) do
+    result=@hash.length()
+  end
 end

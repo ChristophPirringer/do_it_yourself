@@ -38,7 +38,16 @@ describe(MyHash) do
       test_hash.myStore("kitten", "cute")
       expect(test_hash.has_value?("cute")).to(eq(true))
     end
+  end
 
+  describe("#what_length") do
+    it("returns the number of key/value-pairs in the hash") do
+      test_hash = MyHash.new()
+      test_hash.myStore("kitten", "cute")
+      test_hash.myStore("dog", "cuter")
+      test_hash.myStore("ancient gold wyrm", "cutest")
+      expect(test_hash.what_length()).to(eq(3))
+    end
   end
 
 
